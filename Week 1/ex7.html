@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multiple simple components with props</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Greetings(props) {
+            return <p>Hello {props.artist}</p>
+        }
+
+        function App() {
+            return (
+                <div>
+                    <Greetings artist="Hank von Helvete" />
+                    <Greetings artist="Ozzy Osbourne" />
+                    <Greetings artist="Dizzy Gillespie" />
+                </div>
+            )
+        }
+        
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<App/>);
+
+    </script>
+  </body>
+</html>
